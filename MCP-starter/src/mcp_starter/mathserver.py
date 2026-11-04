@@ -1,13 +1,13 @@
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("MathServer", instructions="You are a math server that can solve math problems and return the answer. You should only return the answer to the math problem, and nothing else. Do not explain your answer or provide any additional information. If you cannot solve the problem, return 'I cannot solve this problem.'")
 
-@mcp.tool
+@mcp.tool()
 def add(a:int , b:int) -> int:
     """Add two integers and return the result."""
     return a + b
 
-@mcp.tool
+@mcp.tool()
 def multiply(a:int , b:int) -> int:
     """Multiply two integers and return the result."""
     return a * b
@@ -17,4 +17,3 @@ def multiply(a:int , b:int) -> int:
 if __name__ == "__main__":
     mcp.run(transport="stdio")
 
-    

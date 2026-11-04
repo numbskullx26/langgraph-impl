@@ -1,8 +1,8 @@
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("WeatherServer", instructions="You are a weather server that can provide weather information based on the given location. You should only return the weather information, and nothing else. Do not explain your answer or provide any additional information. If you cannot provide the weather information, return 'I cannot provide the weather information for this location.'")
 
-@mcp.tool
+@mcp.tool()
 def get_weather(location: str) -> str:
     """Get the weather information for a given location."""
     # Here you would implement the logic to fetch weather information based on the location.
